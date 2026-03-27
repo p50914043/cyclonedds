@@ -22,6 +22,15 @@ install(
     helloworld/readme.rst
   DESTINATION "${CMAKE_INSTALL_EXAMPLESDIR}/helloworld"
   COMPONENT dev)
+  
+install(
+    FILES 
+    helloworld/build.sh 
+    DESTINATION "${CMAKE_INSTALL_EXAMPLESDIR}/helloworld"
+    # 设置文件权限
+    PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
+    COMPONENT dev
+)
 
 install(
   FILES

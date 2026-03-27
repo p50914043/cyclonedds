@@ -310,7 +310,7 @@ endif()
 option(BUILD_IDLC_XTESTS "Build the idlc compile tests" OFF)
 
 # Disable building examples by default because it is not strictly required.
-option(BUILD_EXAMPLES "Build examples." OFF)
+option(BUILD_EXAMPLES "Build examples." ON)
 
 option(ENABLE_LTO "Enable link time optimization." ON)
 
@@ -417,9 +417,9 @@ set(generated_defconfig_src  "${CMAKE_CURRENT_SOURCE_DIR}/src/core/ddsi/defconfi
 
 add_subdirectory(compat)
 add_subdirectory(src)
-if(BUILD_EXAMPLES)
+# if(BUILD_EXAMPLES)
   add_subdirectory(examples)
-endif()
+# endif()
 
 if(DEFINED ENV{LIB_FUZZING_ENGINE})
   add_subdirectory(fuzz)
